@@ -12,6 +12,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { BlogService } from './blog.service';
 import { BlogHttpService } from './blog-http.service';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -28,11 +31,15 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'create', component: BlogCreateComponent },
       { path: 'blog/:blogid', component: BlogViewComponent },
+      { path: 'edit/:blogid', component: BlogEditComponent },
       { path: '**', component: NotFoundComponent }
+
 
     ])
   ],

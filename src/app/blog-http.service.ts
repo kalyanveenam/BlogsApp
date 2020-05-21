@@ -41,8 +41,9 @@ export class BlogHttpService {
     return response;
   }
   public editBlog(blogid, postData) {
-    let resonse = this._http.put(this.baseurl + '/' + blogid + '/edit/' + '?authToken=MWIzNzkyNzJjN2ZkZWE1ZjFiYzE5OTI3MzcxZjMwYjI3ZGZiZjU3ZDZlY2RkMzFkNDNiMWQ0MzYxMzRhYjczNmFjMTYxNDdjNDM2ZmM1MGIzNTFkNzI3ZjYwYzUyMmQ0ZTNjOWNkNTVmNmQyZGQ3YTExZDA4MjI1ZTY2MDBlNzY5YQ==', this.blogData)
-    return resonse;
+
+    let response = this._http.put(this.baseurl + '/' + blogid + '/edit/' + '?authToken=MWIzNzkyNzJjN2ZkZWE1ZjFiYzE5OTI3MzcxZjMwYjI3ZGZiZjU3ZDZlY2RkMzFkNDNiMWQ0MzYxMzRhYjczNmFjMTYxNDdjNDM2ZmM1MGIzNTFkNzI3ZjYwYzUyMmQ0ZTNjOWNkNTVmNmQyZGQ3YTExZDA4MjI1ZTY2MDBlNzY5YQ==', postData)
+    return response;
   }
   public deleteBlog(blogid) {
     let response = this._http.delete(this.baseurl + '/' + blogid + '/delete' + '?authToken=MWIzNzkyNzJjN2ZkZWE1ZjFiYzE5OTI3MzcxZjMwYjI3ZGZiZjU3ZDZlY2RkMzFkNDNiMWQ0MzYxMzRhYjczNmFjMTYxNDdjNDM2ZmM1MGIzNTFkNzI3ZjYwYzUyMmQ0ZTNjOWNkNTVmNmQyZGQ3YTExZDA4MjI1ZTY2MDBlNzY5YQ==')

@@ -7,30 +7,23 @@
 
 <body>
 
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">My Travel blogs</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/view']">All</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link " [routerLink]="['/create']" tabindex="-1">Create</a>
-        </li>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand title" href="#">Bloggers Spot</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a [routerLink]="['/home']">Home</a></li>
+        <li><a [routerLink]="['/create']">Create</a></li>
+        <li><a [routerLink]="['/home']">View</a></li>
       </ul>
-
     </div>
   </nav>
+
+  <div class="container">
+    <h3>Post your blogs here</h3>
+    <p>To get inspiration, motivation and Perspective</p>
+  </div>
 
   <br>
 
