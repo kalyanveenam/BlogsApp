@@ -46,6 +46,8 @@ export class BlogHttpService {
     return response;
   }
   public deleteBlog(blogid) {
-    let response = this._http.delete(this.baseurl + '/' + blogid + '/delete' + '?authToken=MWIzNzkyNzJjN2ZkZWE1ZjFiYzE5OTI3MzcxZjMwYjI3ZGZiZjU3ZDZlY2RkMzFkNDNiMWQ0MzYxMzRhYjczNmFjMTYxNDdjNDM2ZmM1MGIzNTFkNzI3ZjYwYzUyMmQ0ZTNjOWNkNTVmNmQyZGQ3YTExZDA4MjI1ZTY2MDBlNzY5YQ==')
+    console.log(this.baseurl + '/' + blogid + '/delete' + '?authToken=MWIzNzkyNzJjN2ZkZWE1ZjFiYzE5OTI3MzcxZjMwYjI3ZGZiZjU3ZDZlY2RkMzFkNDNiMWQ0MzYxMzRhYjczNmFjMTYxNDdjNDM2ZmM1MGIzNTFkNzI3ZjYwYzUyMmQ0ZTNjOWNkNTVmNmQyZGQ3YTExZDA4MjI1ZTY2MDBlNzY5YQ==')
+    let response = this._http.post(this.baseurl + '/' + blogid + '/delete' + '?authToken=MWIzNzkyNzJjN2ZkZWE1ZjFiYzE5OTI3MzcxZjMwYjI3ZGZiZjU3ZDZlY2RkMzFkNDNiMWQ0MzYxMzRhYjczNmFjMTYxNDdjNDM2ZmM1MGIzNTFkNzI3ZjYwYzUyMmQ0ZTNjOWNkNTVmNmQyZGQ3YTExZDA4MjI1ZTY2MDBlNzY5YQ==', '')
+    return response;
   }
 }

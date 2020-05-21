@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { BlogService } from '../blog.service';
+import { ToastrService } from 'ngx-toastr';
+
 import { BlogHttpService } from '../blog-http.service';
 import { error } from '@angular/compiler/src/util';
 @Component({
@@ -12,7 +14,7 @@ import { error } from '@angular/compiler/src/util';
 
 export class BlogViewComponent implements OnInit {
   public currentBlog;
-  constructor(private _route: ActivatedRoute, private router: Router, public blogService: BlogHttpService) {
+  constructor(private _route: ActivatedRoute, private router: Router, public blogService: BlogHttpService, private toastr: ToastrService) {
     console.log('constructor is called');
   }
 
@@ -40,6 +42,25 @@ export class BlogViewComponent implements OnInit {
 
 
   }
+
+  public blogDelete(): any {
+
+    console.log('Delete blog');
+    this.blogService.deleteBlog(this.currentBlog.blogId).subscribe(
+      data => {
+        console.log(data);
+        this.toastr.success('Blog is Deleted successfully');
+        setTimeout(() => {
+          this.router.navigate(['/home'])
+        }, 1000)
+
+      }
+    )
+
+  }
+
+
+
 
 
 }

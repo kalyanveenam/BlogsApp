@@ -6,6 +6,7 @@
             <hr class="my-4">
             <p>{{currentBlog.bodyHtml}}</p>
             <a class="btn btn-primary btn-lg" [routerLink]="['/edit',currentBlog.blogId]" role="button">Edit</a>
+            <a class="btn btn-primary btn-lg" (click)="blogDelete()" role="button">Delete</a>
 
         </div>
     </div>
