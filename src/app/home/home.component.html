@@ -1,24 +1,26 @@
-<div class="container">
+<body>
+    <div class="container">
 
-    <div class="rows" *ngIf='blogData.length>0'>
+        <div class="rows" *ngIf='blogData.length>0'>
 
-        <div *ngFor="let blog of blogData">
+            <div *ngFor="let blog of blogData">
 
 
-            <div class="card border-primary col-md-5 card-layout">
-                <!-- <img class="card-img-top" src="image1.jpg" alt="Card image cap"> -->
-                <div class="card-body ">
-                    <h5 class="card-title text-primary">{{blog.title}}</h5>
+                <div class="card border-primary col-md-5 card-layout shadow lg mb-5 bg-white rounded">
+                    <!-- <img class="card-img-top" src="image1.jpg" alt="Card image cap"> -->
+                    <div class="card-body ">
+                        <h5 class="card-title font-weight-bold text-dark text-uppercase title">{{blog.title}}</h5>
 
-                    <p class="card-text">{{blog.description}}</p>
-                    <br>
+                        <p class="card-text">{{blog.description}}</p>
+                        <br>
 
-                    <a [routerLink]="['/blog',blog.blogId]" class="btn btn-primary btn-block">View</a>
+                        <a [routerLink]="['/blog',blog.blogId]" class="btn btn-secondary btn-block">View</a>
+                    </div>
+
+
                 </div>
 
-
             </div>
-
         </div>
-    </div>
-    <router-outlet></router-outlet>
+
+        <router-outlet></router-outlet>

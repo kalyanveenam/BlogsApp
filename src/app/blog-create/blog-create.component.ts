@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BlogHttpService } from '../blog-http.service';
 import { error } from '@angular/compiler/src/util';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class BlogCreateComponent implements OnInit {
 
-  constructor(public BlogHttpService: BlogHttpService, private toastr: ToastrService) {
+  constructor(public BlogHttpService: BlogHttpService, private toastr: ToastrService, public router: Router) {
   }
 
   public blogTitle: string;
@@ -34,6 +35,7 @@ export class BlogCreateComponent implements OnInit {
       data => {
         console.log(data)
         this.toastr.success('Blog is created successfully');
+        this.router.navigate(['/home'])
       },
       error => {
         console.log(error.errorMessage);
