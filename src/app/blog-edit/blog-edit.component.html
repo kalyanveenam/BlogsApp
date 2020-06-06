@@ -13,14 +13,14 @@
             <div class="cols">
                 <form #createBlogForm='ngForm' (ngSubmit)="editBlog()">
                     <div class="form-group">
-                        <label for="exampleFormControlInput1 " class="col-sm-2">Title of your Blog</label>
+                        <br>
                         <div class="col-sm-10">
                             <input class="form-control " id="exampleFormControlInput1" name='blogTitle'
                                 [(ngModel)]='currentBlog.title' placeholder="Title of your blog" rows=2 required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1 " class="col-sm-2">Description</label>
+
                         <div class="col-sm-10">
                             <input class="form-control " id="exampleFormControlInput1" name='blogDescription'
                                 [(ngModel)]='currentBlog.description' placeholder="Description of your blog" rows=2
@@ -29,7 +29,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1" class="col-sm-2">Start writing</label>
+                        <br>
+                        <label for="exampleFormControlTextarea1" class="col-sm-2 blog-text">You can edit your blog
+                            here!</label>
                         <div class="col-sm-10">
                             <textarea class="form-control  " id="exampleFormControlTextarea1" name='blogBodyHtml'
                                 [(ngModel)]='currentBlog.bodyHtml' rows="12" cols="90"></textarea>

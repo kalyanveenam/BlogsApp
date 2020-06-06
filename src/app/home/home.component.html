@@ -1,4 +1,4 @@
-<body [ngStyle]="{backgroundImage:'url(./assets/img/blog-pic3.jpg)'}">
+<body [ngStyle]="{backgroundImage:'url(./assets/img/blog-hp.jpg)'}">
     <div class="container">
 
         <div class="rows" *ngIf='blogData.length>0'>
@@ -21,6 +21,9 @@
                 </div>
 
             </div>
+            <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+                <p style="color: white">Please Wait. </p>
+            </ngx-spinner>
         </div>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
@@ -38,3 +41,6 @@
         <router-outlet></router-outlet>
     </div>
 </body>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+    <p style="color: white">Holdon for a while, We're getting your blogs </p>
+</ngx-spinner>

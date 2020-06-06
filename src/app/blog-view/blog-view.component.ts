@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { BlogService } from '../blog.service';
 import { ToastrService } from 'ngx-toastr';
-
+import { NgxSpinnerService } from "ngx-spinner";
 import { BlogHttpService } from '../blog-http.service';
 import { error } from '@angular/compiler/src/util';
 @Component({
@@ -14,11 +14,17 @@ import { error } from '@angular/compiler/src/util';
 
 export class BlogViewComponent implements OnInit {
   public currentBlog;
-  constructor(private _route: ActivatedRoute, private router: Router, public blogService: BlogHttpService, private toastr: ToastrService) {
+  constructor(private _route: ActivatedRoute, private router: Router, public blogService: BlogHttpService, private toastr: ToastrService, public spinner: NgxSpinnerService) {
     console.log('constructor is called');
   }
 
   ngOnInit(): void {
+    this.spinner.show();
+
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 1000);
     let selectedBlogId = this._route.snapshot.paramMap.get('blogId');
     console.log(selectedBlogId)
 
