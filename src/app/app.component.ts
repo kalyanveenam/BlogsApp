@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'blog-frontend';
+  darkmode = () => {
+    console.log('clicked')
+    var element = document.body;
+    element.style.backgroundColor = 'blue';
+
+  }
 }

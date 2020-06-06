@@ -38,6 +38,7 @@ import { ToastrModule } from 'ngx-toastr';
       { path: 'create', component: BlogCreateComponent },
       { path: 'blog/:blogid', component: BlogViewComponent },
       { path: 'edit/:blogid', component: BlogEditComponent },
+      { path: '', component: HomeComponent },
       { path: '**', component: NotFoundComponent }
 
 

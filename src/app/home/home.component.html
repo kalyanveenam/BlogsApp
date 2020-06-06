@@ -1,4 +1,4 @@
-<body>
+<body [ngStyle]="{backgroundImage:'url(./assets/img/blog-hp.jpg)'}">
     <div class="container">
 
         <div class="rows" *ngIf='blogData.length>0'>
@@ -22,5 +22,19 @@
 
             </div>
         </div>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+            <a class="navbar-brand" [routerLink]="['/home']">BlogSpot</a>
+
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/home']">Created by Kalyan</a>
+                </li>
+
+            </ul>
+        </nav>
 
         <router-outlet></router-outlet>
+    </div>
+</body>
